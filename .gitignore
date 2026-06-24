@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Env & secrets
+.env
+*.local
+
+# Runtime data & outputs (root-anchored so they don't match package dirs like
+# src/gtm_agent/integrations/output/)
+/data/
+/demo_output/
+/output/
+*.db
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

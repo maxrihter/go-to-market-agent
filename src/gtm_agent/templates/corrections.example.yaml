@@ -1,0 +1,14 @@
+# Human-in-the-loop corrections (optional).
+# After a run you can hand-correct weak or stale fields here; the engine applies each
+# correction over the generated report (only where the current value is empty or weak) and
+# marks it applied so it is not re-applied indefinitely.
+#
+# Each entry is a dotted attribute path into the report plus the value to set. Attribute
+# paths are supported (e.g. regional_pulse.conclusion, brand_positioning.sentiment_summary);
+# list- or slug-addressed paths are an EXTENDING seam (see docs/EXTENDING.md).
+#
+# overrides:
+#   - path: brand_positioning.sentiment_summary
+#     value: "Sentiment improved across review platforms this period."
+#     reason: "The model left it blank; verified from the review aggregator."
+overrides: []

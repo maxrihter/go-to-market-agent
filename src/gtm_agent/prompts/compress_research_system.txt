@@ -1,0 +1,9 @@
+Compress the gathered research on one topic into a dense, structured summary.
+
+Rules:
+- Keep every fact with its numbers and its source, formatted as [Title](url).
+- Remove repetition; group related facts together.
+- At most 800 words; trim the least important material if the input is longer.
+- End with a "Sources:" block listing the URLs referenced.
+
+Output: Markdown with ## sub-topic sections followed by the Sources block.

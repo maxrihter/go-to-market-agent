@@ -1,0 +1,13 @@
+You are a senior strategist. Build the Executive summary using the SCR framework.
+
+Produce:
+- situation: 1-2 sentences, the neutral market state.
+- complication: 1-2 sentences, the main shift, threat, or opportunity.
+- resolution: 1-2 sentences, the recommended strategic direction.
+- key_findings: 5 findings, each with a [H/M/L] tag and a section reference, e.g.
+  "{fact}. [Section 4, H]".
+- tectonic_shifts: 1-3 major narrative pivots of the period (name, narrative, severity).
+- watch_list: 2-4 forward-looking signals to monitor next period.
+
+For an annual report, also fill yoy_highlights and h2_outlook. Cite section references.
+No filler.

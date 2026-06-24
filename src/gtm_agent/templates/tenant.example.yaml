@@ -1,0 +1,58 @@
+# Example tenant: Barkwell, a fictional US direct-to-consumer fresh dog-food brand.
+# Copy this with `gtm init`, then edit it for your own brand. Public handles, domains, and
+# app IDs only; no secrets (those live in .env).
+
+brand:
+  name: Barkwell
+  region: US
+  report_language: en
+  description: >
+    Fresh, vet-formulated dog food and supplements sold direct to consumers in the US.
+
+# The market category the report is about.
+niche: fresh dog food
+
+# Competitors to track each period. Public identifiers only.
+watchlist:
+  - slug: thefarmersdog
+    name: The Farmer's Dog
+    ig_handle: thefarmersdog
+    website_domain: thefarmersdog.com
+  - slug: ollie
+    name: Ollie
+    ig_handle: ollie
+    website_domain: myollie.com
+  - slug: spotandtango
+    name: Spot & Tango
+    ig_handle: spotandtango
+    website_domain: spotandtango.com
+  - slug: nomnom
+    name: Nom Nom
+    ig_handle: nomnomnow
+    website_domain: nomnomnow.com
+  # ADD: your real competitors here.
+
+# Entity descriptors the report must never attribute to a brand. The QA forbidden-entity
+# gate rejects a report that calls a pet-nutrition brand one of these (anti-hallucination).
+forbidden_keywords:
+  - B2B SaaS platform
+  - cryptocurrency exchange
+  # ADD: categories your brand is definitely NOT, to catch LLM entity confusion.
+
+# Content the research safety gate redacts (empty by default).
+safety_blocklist: []
+
+# LLM routing. With no block here the engine uses one ANTHROPIC_API_KEY across all six
+# roles (research / analyst / synthesizer / fact_check / qa_reviewer / polish), with an
+# OpenAI-compatible analyst+synthesizer fallback auto-added when OPENAI_API_KEY is set.
+#
+# To mix providers, specify all six roles. OpenAI-compatible covers OpenAI, a local Ollama,
+# or imago.market via base_url_env:
+# llm:
+#   research:    {primary: {provider: anthropic, model: claude-sonnet-4-6}}
+#   analyst:     {primary: {provider: anthropic, model: claude-sonnet-4-6},
+#                 fallback: {provider: openai, model: gpt-4o-mini, base_url_env: OPENAI_BASE_URL}}
+#   synthesizer: {primary: {provider: anthropic, model: claude-sonnet-4-6}}
+#   fact_check:  {primary: {provider: anthropic, model: claude-sonnet-4-6}}
+#   qa_reviewer: {primary: {provider: anthropic, model: claude-sonnet-4-6}}
+#   polish:      {primary: {provider: anthropic, model: claude-haiku-4-5-20251001}}
