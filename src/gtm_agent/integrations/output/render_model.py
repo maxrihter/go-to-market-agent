@@ -95,7 +95,7 @@ def _competitor_card(p: CompetitorProfile) -> CompetitorCard:
         KpiTile("Followers", _fmt_int(p.ig_followers_count)),
         KpiTile("Posts/30d", _fmt_int(p.ig_posts_last_30d)),
         KpiTile(
-            "ER",
+            "Engagement",
             _fmt_pct(p.ig_avg_engagement_rate * 100)
             if p.ig_avg_engagement_rate is not None
             else "n/a",

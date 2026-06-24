@@ -55,11 +55,15 @@ The Farmer's Dog leads; Ollie is the closest fast-follower on content.
 
 Founder-led sourcing Reels outperform product shots across the set.
 
-### The Farmer's Dog (direct threat)
+**Competitor metrics**
 
-Followers | Posts/30d | ER | Growth 90d
---- | --- | --- | ---
-1,200,000 | 18 | 3.2% | 6.0%
+| Competitor | Followers | Posts/30d | Engagement | Growth 90d |
+| --- | --- | --- | --- | --- |
+| The Farmer's Dog (direct) | 1,200,000 | 22 | 3.2% | 6.0% |
+| Ollie (direct) | 480,000 | 26 | 2.8% | 9.1% |
+| Spot & Tango (adjacent) | 210,000 | 17 | 2.1% | 4.4% |
+
+### The Farmer's Dog (direct threat)
 
 - Strength: Strong brand trust
 - Strength: High content cadence
@@ -67,19 +71,11 @@ Followers | Posts/30d | ER | Growth 90d
 
 ### Ollie (direct threat)
 
-Followers | Posts/30d | ER | Growth 90d
---- | --- | --- | ---
-480,000 | 18 | 3.2% | 6.0%
-
 - Strength: Strong brand trust
 - Strength: High content cadence
 - Watch: Premium price ceiling
 
 ### Spot & Tango (adjacent threat)
-
-Followers | Posts/30d | ER | Growth 90d
---- | --- | --- | ---
-210,000 | 18 | 3.2% | 6.0%
 
 - Strength: Strong brand trust
 - Strength: High content cadence

@@ -149,16 +149,26 @@ def _regional() -> RegionalMarketPulse:
     )
 
 
-def _competitor(slug: str, name: str, followers: int, threat: str, move: str) -> CompetitorProfile:
+def _competitor(
+    slug: str,
+    name: str,
+    followers: int,
+    threat: str,
+    move: str,
+    *,
+    posts: int,
+    er: float,
+    growth: float,
+) -> CompetitorProfile:
     return CompetitorProfile(
         name=name,
         slug=slug,
         country_hq="US",
         ig_handle=slug,
         ig_followers_count=followers,
-        ig_posts_last_30d=18,
-        ig_avg_engagement_rate=0.032,
-        ig_follower_growth_90d_pct=6.0,
+        ig_posts_last_30d=posts,
+        ig_avg_engagement_rate=er,
+        ig_follower_growth_90d_pct=growth,
         threat_level=threat,  # type: ignore[arg-type]
         data_completeness_pct=0.7,
         strengths=["Strong brand trust", "High content cadence"],
@@ -187,14 +197,29 @@ def _competitive(n: int = 3) -> CompetitiveLandscape:
             1_200_000,
             "direct",
             "Launched a vet-endorsement campaign.",
+            posts=22,
+            er=0.032,
+            growth=6.0,
         ),
-        _competitor("ollie", "Ollie", 480_000, "direct", "Expanded its fresh-bake line."),
+        _competitor(
+            "ollie",
+            "Ollie",
+            480_000,
+            "direct",
+            "Expanded its fresh-bake line.",
+            posts=26,
+            er=0.028,
+            growth=9.1,
+        ),
         _competitor(
             "spotandtango",
             "Spot & Tango",
             210_000,
             "adjacent",
             "Pushed an UnKibble retargeting push.",
+            posts=17,
+            er=0.021,
+            growth=4.4,
         ),
     ]
     return CompetitiveLandscape(

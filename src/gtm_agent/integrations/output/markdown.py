@@ -86,8 +86,38 @@ def _section(section: Section) -> list[str]:
     return out
 
 
+def _competitor_table(cards: list[CompetitorCard]) -> list[str]:
+    """One consolidated metrics table: competitors as rows, shared tile labels as columns."""
+    labels = [t.label for t in cards[0].tiles]
+    out = [
+        "**Competitor metrics**",
+        "",
+        "| Competitor | " + " | ".join(_cell(label) for label in labels) + " |",
+        "| --- | " + " | ".join("---" for _ in labels) + " |",
+    ]
+    for c in cards:
+        vals = {t.label: t.value for t in c.tiles}
+        cells = " | ".join(_cell(vals.get(label, "")) for label in labels)
+        name = _cell(c.name) + (f" ({_cell(c.threat)})" if c.threat else "")
+        out.append(f"| {name} | {cells} |")
+    out.append("")
+    return out
+
+
 def _cards(cards: list[CompetitorCard]) -> list[str]:
     out: list[str] = []
+    carded = [c for c in cards if c.tiles]
+    if len(carded) >= 2:
+        # Lead with one consolidated metrics table, then qualitative notes per competitor.
+        out += _competitor_table(carded)
+        for card in cards:
+            threat = f" ({_oneline(card.threat)} threat)" if card.threat else ""
+            out += [f"### {_oneline(card.name)}{threat}", ""]
+            for n in card.notes:
+                out.append(f"- {_oneline(n)}")
+            if card.notes:
+                out.append("")
+        return out
     for card in cards:
         threat = f" ({_oneline(card.threat)} threat)" if card.threat else ""
         out += [f"### {_oneline(card.name)}{threat}", ""]
